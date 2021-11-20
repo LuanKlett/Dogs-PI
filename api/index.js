@@ -32,7 +32,7 @@ conn.sync({ force: true }).then(() => {
     const response = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API}`)
     const temperaments = response.data.map(d => d.temperament)
     const filtered = [...new Set(temperaments.map(t => t ? t.split(", ") : null).filter(t => t !== null).flat())]
-    filtered.forEach(async t => await Temperament.create({
+    filtered.sort().forEach(async t => await Temperament.create({
       name: t
     }))
   });

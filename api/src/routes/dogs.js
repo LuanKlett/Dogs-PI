@@ -10,7 +10,7 @@ router.get('/', async function(req, res){
 
     const dogsApi = response.data.map(d => ({id: d.id,
                                             name: d.name,
-                                            image: d.reference_image_id,
+                                            image: `https://cdn2.thedogapi.com/images/${d.reference_image_id}.jpg`,
                                             weight: d.weight.metric,
                                             temperament: d.temperament}))
 

@@ -1,22 +1,36 @@
 const initialState = {
-  navBackground: "rgba(25, 25, 25, .7)",
-  dist: true
+  temperaments: undefined,
+  dogs: undefined,
+  detail: undefined,
+  loading: true,
 };
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-
-    case "SET_NAV_BACKGROUND":
+    case "GET_TEMPERAMENTS":
       return {
         ...state,
-        navBackground: action.payload
+        temperaments: action.payload,
       };
 
-      case "SET_DIST":
-        return{
-          ...state,
-          dist: action.payload
-        }
+    case "GET_ALL_DOGS":
+      return {
+        ...state,
+        dogs: action.payload,
+        loading: false,
+      };
+
+    case "GET_DETAIL":
+      return {
+        ...state,
+        detail: action.payload,
+      };
+
+    case "GET_SEARCH":
+      return {
+        ...state,
+        dogs: action.payload,
+      };
 
     default:
       return state;
