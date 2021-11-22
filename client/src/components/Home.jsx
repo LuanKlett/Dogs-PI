@@ -47,33 +47,42 @@ function Home ({dogs, loading, getAllDogs, getSearch, temperaments, getTemperame
     setFilterDb(e.currentTarget.value)
   }
 
+  function handleClick(e){
+    e.preventDefault()
+    setFilterTemperaments([])
+    document.querySelectorAll("[type=checkbox]").forEach(c => c.checked = false)
+  }
+
   return (
     loading ? <Loading /> : (<HomeDiv>
-      <div id="select">
-        <label>Ordenar por: </label>
+      <div id="order">
+        <label>Order by: </label>
         <select name="select" onChange={e => handleSelectChange(e)}>
-          <option value="nameAsc" selected>Nombre (asc.)</option>
-          <option value="nameDes">Nombre (des.)</option>
-          <option value="weightAsc">Peso (asc.)</option>
-          <option value="weightDes">Peso(des.)</option>
+          <option value="nameAsc" selected>Name (asc.)</option>
+          <option value="nameDes">Name (des.)</option>
+          <option value="weightAsc">Weight (asc.)</option>
+          <option value="weightDes">Weight (des.)</option>
         </select>
       </div>
       <input id="searchBar" type="search" placeholder="search..." onChange={e => handleChange(e)} />
       <div id="containerD">
         <div id="containerE">
-          <p>Filtrar por temperamentos:</p>
+          <p>Filter by temperaments:</p>
           <div id="checks">
-              <input type="search" name="temperaments" onChange={e => handleSearch(e)} value={searchTemperaments}/>
+              <input type="search" name="temperaments" placeholder="search..." onChange={e => handleSearch(e)} value={searchTemperaments}/>
               {temperaments && temperaments.map(t => t.name.toLowerCase().indexOf(searchTemperaments.toLowerCase()) !== -1 ? <label key={`check${t.id}`}><input id={t.id} name={t.name} onChange={e => handleCheck(e)} type="checkbox"/>{t.name}</label> : null)}
           </div>
+          <button id="cleanFilter" onClick={e => handleClick(e)}>Limpiar Filtros</button>
         </div>
         <div>
-          <select name="select" onChange={e => handleSelectChangeDb(e)}>
-            <option value="off" selected>Todos</option>
-            <option value="db">Base de Datos</option>
-            <option value="api">Api</option>
-          </select>
-          {dogs && <Dogs dogs={dogs} order={order} filterTemperaments={filterTemperaments} filterDb={filterDb}/>}
+          <center>
+            <select name="select" id="apiDb" onChange={e => handleSelectChangeDb(e)}>
+              <option value="off" selected>All</option>
+              <option value="db">Data Base</option>
+              <option value="api">Api</option>
+            </select>
+          </center>
+          {!dogs.res ? <Dogs dogs={dogs} order={order} filterTemperaments={filterTemperaments} filterDb={filterDb}/> : <p>{dogs.res}</p>}
         </div>
       </div>
     </HomeDiv>)

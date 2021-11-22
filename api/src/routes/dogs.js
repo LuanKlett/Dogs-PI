@@ -30,7 +30,7 @@ router.get('/', async function(req, res){
     })
 
     const dogs = [...dogsApi, ...filtered]
-    res.send(dogs.length ? dogs : "No se econtró ninguna raza")
+    res.send(dogs.length ? dogs : {res: "No se econtraron resultados"})
 
   } else{
     const response = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API}`)

@@ -1,30 +1,43 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { getDetail } from "../actions"
+import Loading from "./Loading"
 import styled from "styled-components";
 
 const DetailDiv = styled.div`
+  margin-top: 7vw;
 
+  -webkit-animation: fadein 2s;
+  animation: fadein 1s;
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 `
 
-function Detail ({match, detail, getDetail}){
+function Detail ({match, detail, getDetail, loading}){
   const id = match.params.id;
   
   useEffect(() => {
     getDetail(id)
   }, [])
-  
+  console.log(detail)
   return (
-    <DetailDiv>
-      <h1>DETAIL</h1>
-      <p>{detail?detail.name:null}</p>  
-    </DetailDiv>
+    loading ? <Loading />: (<DetailDiv>
+      <h1>{detail.name}</h1>
+      <img src={detail.image} alt={detail.name}/>
+      <p>{detail.weight}</p>
+      <p>{detail.height}</p>
+      <p>{detail.temperament}</p>
+
+    </DetailDiv>)
   )
 }
 
 function mapStateToProps(state) {
   return {
-    detail: state.detail
+    detail: state.detail,
+    loading: state.loading
   };
 }
 

@@ -4,13 +4,13 @@ import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import Detail from "./components/Detail"
 import Create from "./components/Create"
+import Start from "./components/Start"
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/">
-          <div>INICIO</div>
+        <Route exact path="/" component={Start}>
         </Route>
         <Route>
           <NavBar />

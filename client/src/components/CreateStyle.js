@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
 export const CreateDiv = styled.div`
+  margin-top: 7vw;
+
+  -webkit-animation: fadein 1s;
+  animation: fadein 1s;
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
   ul {
     list-style-type: none;
   }

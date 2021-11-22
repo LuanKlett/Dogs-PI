@@ -1,17 +1,22 @@
 import React from "react";
-import { NavLink}  from "react-router-dom"
+import { NavLink, useLocation }  from "react-router-dom"
+import { connect } from "react-redux";
+import { setLoading } from "../actions";
 import { Nav } from "./NavBarStyle"
 
-export default function NavBar (){
+function NavBar ({ setLoading }){
+  const location = useLocation();
+  const pathname = location.pathname;
 
   return (
     <Nav>
-      <img id="db" src="./img/dogs_breeds2.png" />
+      <img id="db" src={pathname.includes("/detail/") ? "../img/dogs_breeds2.png" : "./img/dogs_breeds2.png"} />
       <div id="container">
         <NavLink
           to="/home"
           className={isActive =>
             "nav-link" + (!isActive ? " unselected" : "active")}
+          onClick={setLoading}
           >
           Home
       </NavLink>
@@ -26,3 +31,14 @@ export default function NavBar (){
   </Nav>
   )
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setLoading: () => dispatch(setLoading()),
+  };
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(NavBar);

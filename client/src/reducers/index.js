@@ -24,6 +24,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         detail: action.payload,
+        loading: false,
       };
 
     case "GET_SEARCH":
@@ -31,6 +32,12 @@ function rootReducer(state = initialState, action) {
         ...state,
         dogs: action.payload,
       };
+
+    case "SET_LOADING":
+      return {
+        ...state,
+        loading: true,
+      }
 
     default:
       return state;

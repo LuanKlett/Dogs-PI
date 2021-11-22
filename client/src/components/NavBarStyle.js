@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 6vw;
   top: 0;
   margin-top: 1vw;
@@ -25,7 +25,8 @@ export const Nav = styled.nav`
   }
 
   & .unselected{
-    background-color: LightCoral;
+    background-color: #ff8789;
+    border: groove transparent;
     border-radius: 0.5vw;
     width: 5vw;
     color: black;
@@ -35,7 +36,8 @@ export const Nav = styled.nav`
   }
 
   & .active{
-    background-color: LightCoral;
+    background-color: #ff8789;
+    border: groove white;
     border-radius: 0.5vw;
     width: 5vw;
     color: black;

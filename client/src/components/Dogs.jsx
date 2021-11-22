@@ -3,7 +3,6 @@ import Dog from "./Dog"
 import { DogsDiv, BtnDiv } from "./DogsStyle"
 
 export default function Dogs({dogs, order, filterTemperaments, filterDb}){
-  
   function p (){
     let dogPages = [...sort];
     let arr = []
@@ -85,6 +84,7 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
       case "api":
         return arr.filter(d => d.db !== true)
       case "db":
+        console.log(arr.filter(d => d.db === true))
         return arr.filter(d => d.db === true)
       default:
         return arr
@@ -101,7 +101,7 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
     if (e.target.value === ">" && pageNumber < pages.length - 1) setPageNumber(pageNumber + 1)
   }
   
-  const [sort, setSort] = useState(orderSort(filterDogsByTemperament(filterDogsByDb(dogs)), order))
+  const [sort, setSort] = useState(orderSort(filterDogsByDb(filterDogsByTemperament(dogs)), order))
   const [pages, setPages] = useState(p())
   const [pageNumber, setPageNumber] = useState(0)
 
@@ -111,7 +111,7 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
 
   useEffect(()=>{ 
     setPages(p())
-  }, [sort])
+  }, [sort, order])
 
   useEffect(() => {
     setPageNumber(0)
@@ -121,7 +121,7 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
   return(
     <div>
       <DogsDiv>
-        {pages[pageNumber].map(d => <Dog key={d.id} name={d.name} image={d.image} weight={d.weight} temperament={d.temperament} />)}
+        {pages[pageNumber].map(d => <Dog key={d.id} name={d.name} image={d.image} weight={d.weight} temperament={d.temperament} id={d.id} />)}
       </DogsDiv>
       <BtnDiv>
         <button className="btn" value="<" onClick={e => handleArrow(e)}>{"<"}</button>
@@ -132,7 +132,7 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
   )
   } else{
     return(
-      <div>No se encontraron resultados</div>
+      <p>No se encontraron resultados</p>
     )
   }
 }

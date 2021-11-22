@@ -12,7 +12,6 @@ export function getAllDogs(){
   return async function(dispatch) {
     const response = await fetch("http://localhost:3001/dogs")
     .then(response => response.json())
-    
     dispatch({ type: "GET_ALL_DOGS", payload: response });
   };
 }
@@ -35,4 +34,8 @@ export function getSearch(payload){
       dispatch({ type: "GET_SEARCH", payload: json });
       });
   };
+}
+
+export function setLoading(){
+  return { type: "SET_LOADING", payload: false }
 }
