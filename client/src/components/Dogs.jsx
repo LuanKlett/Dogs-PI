@@ -93,17 +93,26 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
 
   function handleClick(e){
     e.preventDefault();
-    setPageNumber(e.target.value)
+    setPageNumber(parseInt(e.target.value))
   }
 
   function handleArrow(e){
-    if (e.target.value === "<" && pageNumber > 1) setPageNumber(pageNumber - 1)
+    if (e.target.value === "<" && pageNumber > 0) setPageNumber(pageNumber - 1)
     if (e.target.value === ">" && pageNumber < pages.length - 1) setPageNumber(pageNumber + 1)
+  }
+
+  function createButtons(){
+    return pages.map((e, i) => pageNumber !== i ? <button key={`btn${i}`} className="btn" value={i} onClick={e => handleClick(e)}>{i + 1}</button> : <button key={`btn${i}`} id="active" className="btn" value={i} onClick={e => handleClick(e)}>{i + 1}</button>)
   }
   
   const [sort, setSort] = useState(orderSort(filterDogsByDb(filterDogsByTemperament(dogs)), order))
   const [pages, setPages] = useState(p())
   const [pageNumber, setPageNumber] = useState(0)
+  const [buttons, setButtons] = useState(createButtons())
+
+  useEffect(() => {
+    setButtons(createButtons())
+  }, [pageNumber])
 
   useEffect(() =>{
     setSort(orderSort(filterDogsByTemperament(filterDogsByDb(dogs)), order))
@@ -117,6 +126,10 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
     setPageNumber(0)
   }, [filterTemperaments, filterDb])
 
+  useEffect(() => {
+    setButtons(createButtons())
+  }, [pages])
+
   if (pages.length){
   return(
     <div>
@@ -125,14 +138,14 @@ export default function Dogs({dogs, order, filterTemperaments, filterDb}){
       </DogsDiv>
       <BtnDiv>
         <button className="btn" value="<" onClick={e => handleArrow(e)}>{"<"}</button>
-        {pages.map((e, i) => <button key={`btn${i}`} className="btn" value={i} onClick={e => handleClick(e)}>{i + 1}</button>)}
+          {buttons}
         <button className="btn" value=">" onClick={e => handleArrow(e)}>{">"}</button>
       </BtnDiv>
     </div>
   )
   } else{
     return(
-      <p>No se encontraron resultados</p>
+      <p style={{width: "100vw"}}>No se encontraron resultados</p>
     )
   }
 }

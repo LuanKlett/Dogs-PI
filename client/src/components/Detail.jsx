@@ -26,9 +26,10 @@ function Detail ({match, detail, getDetail, loading}){
     loading ? <Loading />: (<DetailDiv>
       <h1>{detail.name}</h1>
       <img src={detail.image} alt={detail.name}/>
-      <p>{detail.weight}</p>
-      <p>{detail.height}</p>
+      <p>{detail.weight} kg</p>
+      <p>{detail.height} cm</p>
       <p>{detail.temperament}</p>
+      <p>{detail.life_span}</p>
 
     </DetailDiv>)
   )

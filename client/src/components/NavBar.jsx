@@ -25,7 +25,7 @@ function NavBar ({ setLoading }){
           className={isActive =>
             "nav-link" + (!isActive ? " unselected" : "")}
           >
-          Create
+          Add
       </NavLink>
     </div>
   </Nav>

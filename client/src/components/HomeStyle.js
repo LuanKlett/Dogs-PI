@@ -14,62 +14,120 @@ export const HomeDiv = styled.div`
     position: fixed;
     right: 3.7vw;
     top: 3.2vw;
+    border-radius: 0.5vw;
+  }
+
+  & #searchT{
+    border-radius: 0.5vw;
   }
 
   & #apiDb{
     z-index: 100;
-    position: absolute;
-    top: 7.5vw;
-    right: 40.7vw;
+    position: relative;
+    top: -0.5vw;
+    margin-left: 0.6vw;
+    border-radius: 0.5vw;
   }
 
   & #order{
     position: absolute;
     right: 3.7vw;
     top: 4.9vw;
+    & select {
+      border-radius: 0.5vw;
+    }
   }
 
   & #containerD{
     display: flex;
     width: 30vw;
-    margin-top: 9.6vw;
+  }  
 
-    & #containerE{
-      margin-left: 1vw;
-      width: 14vw;
-      display:flex;
-      flex-direction: column;
-      align-items: center;
+  & #off{
+    z-index: 1000;
+    background-color: rgba(151, 195, 206, .7);
+    position: fixed;
+    width: 15vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    border-bottom-right-radius: 1vw;
+    border-top-right-radius: 1vw;
+    left: -13.5vw;
+    transition: left 1s;
 
-      & #cleanFilter {
-        margin-top: 0.5vw;
-      }
-
-      & p{
-        background-color: rgba(0, 0, 0, 0.45);
-        border-radius: 0.3vw;
-        padding-top: 0.1vw;
-        padding-bottom: 0.3vw;
-        padding-right: 0.5vw;
-        padding-left: 0.5vw;
-        color: white;
-        font-weight: bold;
-        margin: 0;
-      }
+    & #cleanFilter {
+      margin-left: 0.2vw;
+      background-color: #ff8789;
+      border-radius: 1vw;
     }
 
-    & #checks {
-
-      background-color: rgba(0, 0, 0, 0.45);
+    & p{
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 0.3vw;
+      padding-top: 0.1vw;
+      padding-bottom: 0.3vw;
+      padding-right: 0.5vw;
+      padding-left: 0.5vw;
       color: white;
-      display: flex;
-      flex-direction: column;
-      border:2px solid #ccc;
-      width: 14vw;
-      height: 70vh;
-      overflow-y: scroll;
-      text-align: left;
-      margin-top: 0.5vw;
-    }
+      font-weight: bold;
+      margin: 0;
+    } 
+  }
+
+  & #off:hover {
+    left: 0;
+  }
+`
+
+export const ChecksDiv = styled.div`
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border:2px solid #ccc;
+  width: 14vw;
+  height: 70vh;
+  overflow-y: scroll;
+  text-align: left;
+  margin-top: 0.5vw;
+  border-radius: 0.5vw;
+  height: 60vh;
+
+  ::-webkit-scrollbar{
+    width: 0.5vw;
+    border-left:
+    1px solid #ff8789;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color:#ff8789;
+    border-radius: 1vw;
+  }
+
+  & .checkbox{
+    appearance: none;
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    border: 2px solid #ff8789;
+    border-radius: 0.35vw;
+  }
+
+  .checkbox:checked {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: #86c0ce;
+    background: url(./img/square.png);
+    background-size: contain;
+    -webkit-filter: drop-shadow(0px 0px 4px #86c0ce);
+    filter:         drop-shadow(0px 0x 4px #86c0ce);
+  }
+
+  & label{
+    display: flex;
+    margin-left: 0.5vw;
   }
 `

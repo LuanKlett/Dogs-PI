@@ -66,8 +66,8 @@ export default function Loading (){
 
   return(
     <SpinDiv>
-      <div class="item">
-        <i class="loader --1"></i>
+      <div className="item">
+        <i className="loader --1"></i>
       </div>
     </SpinDiv>
   )

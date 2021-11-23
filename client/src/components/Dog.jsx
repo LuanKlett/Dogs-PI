@@ -11,10 +11,16 @@ function Dog({ name, image, weight, temperament, id, setLoading }) {
       <LinkDiv>
         <Link to={`/detail/${id}`} onClick={setLoading}/>
       </LinkDiv>
-      <p>{name}</p>
-      <img id="dogImg" src={image} />
-      <p>{weight} kg</p>
-      <p>{temperament}</p>
+      <div id="name">
+        <h1>{name}</h1>
+      </div>
+      <div id="imgTemperaments">
+        <img id="dogImg" src={image} />
+        <p>Temperaments:<br/>{temperament}</p>
+      </div>
+      <div id="weight">
+        <p>Weight: {weight} kg</p>
+      </div>
     </DogDiv>
     </HoverDiv>
   );
