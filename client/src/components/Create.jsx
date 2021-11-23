@@ -94,7 +94,7 @@ function Create ({temperaments, getTemperaments}){
                             weight: input.minWeight + "-" + input.maxWeight,
                             life_span: input.life_span,
                             temperaments: input.temperaments,
-                            image: input.image})
+                            image: input.image ? input.image : "../img/dogDefault.jpg"})
     })
     const content = await post.json();
     history.push(`/detail/${content.id}`)
@@ -148,7 +148,7 @@ function Create ({temperaments, getTemperaments}){
               </li>
               <li>
               <div id="pic">
-                {input.image && <img src={input.image}/>}
+                {input.image ? <img src={input.image}/> : <img src="./img/dogDefault.jpg"/>}
               </div>
             </li>
             </ul>

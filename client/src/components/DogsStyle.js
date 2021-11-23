@@ -7,6 +7,7 @@ export const DogsDiv = styled.div`
   flex-wrap: wrap;
   margin-left: 1vw;
   width: 97.5vw;
+  background-color: rgba(151, 195, 206, .4);
 `
 
 export const BtnDiv = styled.div`

@@ -5,6 +5,7 @@ export const CreateDiv = styled.div`
   border: solid 0.2vw #ff8789;
   border-radius : 1vw;
   width: 50vw;
+  background-color: rgba(151, 195, 206, .4);
 
   & #ulInputs{
     display: flex;

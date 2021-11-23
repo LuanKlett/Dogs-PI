@@ -15,10 +15,12 @@ export const HomeDiv = styled.div`
     right: 3.7vw;
     top: 3.2vw;
     border-radius: 0.5vw;
+    border-color: #ff8789;
   }
 
   & #searchT{
     border-radius: 0.5vw;
+    border-color: #ff8789;
   }
 
   & #apiDb{
@@ -27,14 +29,19 @@ export const HomeDiv = styled.div`
     top: -0.5vw;
     margin-left: 0.6vw;
     border-radius: 0.5vw;
+    border-color: #ff8789;
   }
 
   & #order{
     position: absolute;
     right: 3.7vw;
     top: 4.9vw;
+    color: white;
     & select {
       border-radius: 0.5vw;
+    }
+    & select{
+      border-color: #ff8789;
     }
   }
 
@@ -63,6 +70,7 @@ export const HomeDiv = styled.div`
       margin-left: 0.2vw;
       background-color: #ff8789;
       border-radius: 1vw;
+      margin-bottom: 7vw;
     }
 
     & p{
@@ -75,6 +83,7 @@ export const HomeDiv = styled.div`
       color: white;
       font-weight: bold;
       margin: 0;
+      margin-top: 7vw;
     } 
   }
 

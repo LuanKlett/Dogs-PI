@@ -6,11 +6,12 @@ export const DogDiv = styled.div`
   margin: 0.6vw;
   background-color: rgba(0, 0, 0, 0.45);
   color: white;
-  width: 23.1vw;
+  width: 22.9vw;
   height: 35vh;
   justify-content: space-around;
   transition: all .2s ease-in-out;
   border-radius: 1vw;
+  border: solid 0.1vw #ff8789;
 
   & #name{
     width: 23vw;

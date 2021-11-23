@@ -25,22 +25,22 @@ export const Nav = styled.nav`
   }
 
   & .unselected{
-    background-color: #ff8789;
-    border: groove transparent;
+    background-color: transparent;
+    border: groove #ff8789;
     border-radius: 0.5vw;
     width: 5vw;
-    color: black;
+    color: white;
     font-size: 1.5vw;
     font-weight: bold;
     text-decoration: none;
   }
 
   & .active{
-    background-color: #ff8789;
-    border: groove white;
+    background-color: transparent;
+    border: groove #ff8789;
     border-radius: 0.5vw;
     width: 5vw;
-    color: black;
+    color: #ff8789;
     font-size: 1.5vw;
     font-weight: bold;
     text-decoration: none;

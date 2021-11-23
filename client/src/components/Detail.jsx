@@ -2,18 +2,7 @@ import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { getDetail } from "../actions"
 import Loading from "./Loading"
-import styled from "styled-components";
-
-const DetailDiv = styled.div`
-  margin-top: 7vw;
-
-  -webkit-animation: fadein 2s;
-  animation: fadein 1s;
-  @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-`
+import { DetailDiv } from "./DetailStyle"
 
 function Detail ({match, detail, getDetail, loading}){
   const id = match.params.id;
@@ -23,15 +12,19 @@ function Detail ({match, detail, getDetail, loading}){
   }, [])
   console.log(detail)
   return (
-    loading ? <Loading />: (<DetailDiv>
+    loading ? <Loading />: (<center><DetailDiv>
       <h1>{detail.name}</h1>
-      <img src={detail.image} alt={detail.name}/>
-      <p>{detail.weight} kg</p>
-      <p>{detail.height} cm</p>
-      <p>{detail.temperament}</p>
-      <p>{detail.life_span}</p>
+      <div id="all">
+        <img src={detail.image} alt={detail.name}/>
+        <div id="text">
+          <p>Weight: {detail.weight} kg</p>
+          <p>Height: {detail.height} cm</p>
+          <p>Temperaments: {detail.temperament}</p>
+          <p>Life Span: {detail.life_span}</p>
+        </div>
+      </div>
 
-    </DetailDiv>)
+    </DetailDiv></center>)
   )
 }
 
