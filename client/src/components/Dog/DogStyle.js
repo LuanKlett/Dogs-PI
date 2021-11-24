@@ -9,15 +9,15 @@ export const DogDiv = styled.div`
   width: 22.9vw;
   height: 35vh;
   justify-content: space-around;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-radius: 1vw;
   border: solid 0.1vw #ff8789;
 
-  & #name{
+  & #name {
     width: 23vw;
     height: 7vh;
-    & h1{
-    font-size: 1.2vw;
+    & h1 {
+      font-size: 1.2vw;
     }
   }
 
@@ -31,48 +31,47 @@ export const DogDiv = styled.div`
     padding-left: 1vw;
     padding-right: 1vw;
 
-    & #dogImg{
+    & #dogImg {
       border-radius: 1vw;
       object-fit: cover;
       width: 10vw;
       height: 10vw;
       margin-right: 1vw;
     }
-    
-    & p{
+
+    & p {
       padding: 0;
-      font-size: .9vw;
+      font-size: 0.9vw;
     }
   }
 
-  & #weight{
+  & #weight {
     width: 23vw;
     height: 7vh;
 
-    & p{
+    & p {
       font-size: 1vw;
     }
   }
-`
+`;
 
 export const LinkDiv = styled.div`
-  position:absolute;
+  position: absolute;
   width: 23vw;
   height: 35vh;
   border-radius: 1vw;
 
-  & a{
+  & a {
     border-radius: 1vw;
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
   }
-`
+`;
 
 export const HoverDiv = styled.div`
-  
-  & :hover{
+  & :hover {
     transform: scale(1.06);
-}
-`
+  }
+`;

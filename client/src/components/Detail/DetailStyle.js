@@ -47,4 +47,20 @@ export const DetailDiv = styled.div`
     object-fit: cover;
     border-radius: 1vw;
   }
-`
+
+  & #arrow{
+    position: fixed;
+    object-fit: contain;
+    width: 5vw;
+    height: 5vw;
+    top 7.8vw;
+    left: 14vw;
+    -webkit-filter: drop-shadow(2px 2px 7px black);
+    filter:         drop-shadow(2px 2px 7px black);
+  }
+
+  & #arrow:hover{
+    -webkit-filter: drop-shadow(2px 2px 7px white);
+    filter:         drop-shadow(2px 2px 7px white);
+  }
+`;

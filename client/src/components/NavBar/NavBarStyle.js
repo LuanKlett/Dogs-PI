@@ -10,21 +10,21 @@ export const Nav = styled.nav`
   position: absolute;
   width: 100vw;
 
-  & #db{
+  & #db {
     top: -0.8vw;
     position: absolute;
     left: 0.5vw;
     width: 30vw;
   }
 
-  & #container{
+  & #container {
     width: 11vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 
-  & .unselected{
+  & .unselected {
     background-color: transparent;
     border: groove #ff8789;
     border-radius: 0.5vw;
@@ -35,7 +35,7 @@ export const Nav = styled.nav`
     text-decoration: none;
   }
 
-  & .active{
+  & .active {
     background-color: transparent;
     border: groove #ff8789;
     border-radius: 0.5vw;
@@ -45,4 +45,4 @@ export const Nav = styled.nav`
     font-weight: bold;
     text-decoration: none;
   }
-`
+`;

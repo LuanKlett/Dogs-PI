@@ -12,10 +12,11 @@ export const HomeDiv = styled.div`
 
   & #searchBar{
     position: fixed;
-    right: 3.7vw;
+    right: 1vw;
     top: 3.2vw;
     border-radius: 0.5vw;
     border-color: #ff8789;
+    font-size: 1vw;
   }
 
   & #searchT{
@@ -34,13 +35,14 @@ export const HomeDiv = styled.div`
 
   & #order{
     position: absolute;
-    right: 3.7vw;
-    top: 4.9vw;
+    right: 1vw;
+    top: 7.6vw;
     color: white;
+    font-size: 1vw;
+    font-weight: bold;
+    
     & select {
       border-radius: 0.5vw;
-    }
-    & select{
       border-color: #ff8789;
     }
   }
@@ -63,7 +65,7 @@ export const HomeDiv = styled.div`
     top: 0;
     border-bottom-right-radius: 1vw;
     border-top-right-radius: 1vw;
-    left: -13.5vw;
+    left: -15vw;
     transition: left 1s;
 
     & #cleanFilter {
@@ -89,6 +91,24 @@ export const HomeDiv = styled.div`
 
   & #off:hover {
     left: 0;
+  }
+
+  & #menu{
+    position: absolute;
+    width: 2.1vw;
+    height: 2vw;
+    right: -2vw;
+    top: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+    -webkit-filter: drop-shadow(0px 0px 2px black);
+    filter:         drop-shadow(0px 0px 2px black);
+    width: 1.5vw;
+    height: 1.5vw;
+    }
   }
 `
 

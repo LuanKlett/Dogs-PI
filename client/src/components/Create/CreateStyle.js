@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const CreateDiv = styled.div`
   margin-top: 8vw;
   border: solid 0.2vw #ff8789;
-  border-radius : 1vw;
+  border-radius: 1vw;
   width: 50vw;
-  background-color: rgba(151, 195, 206, .4);
+  background-color: rgba(151, 195, 206, 0.4);
 
-  & #ulInputs{
+  & #ulInputs {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -17,8 +17,8 @@ export const CreateDiv = styled.div`
   -webkit-animation: fadein 1s;
   animation: fadein 1s;
   @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
 
   ul {
@@ -26,8 +26,8 @@ export const CreateDiv = styled.div`
   }
 
   & #container {
-    border:2px solid #ccc;
-    width:300px;
+    border: 2px solid #ccc;
+    width: 300px;
     height: 100px;
     overflow-y: scroll;
   }
@@ -41,7 +41,7 @@ export const CreateDiv = styled.div`
     width: 3vw;
   }
 
-  & .dangerNumber:focus{
+  & .dangerNumber:focus {
     outline: none;
   }
 
@@ -49,34 +49,34 @@ export const CreateDiv = styled.div`
     border-color: red;
   }
 
-  & .dangerText:focus{
+  & .dangerText:focus {
     outline: none;
   }
 
-  & .input:focus{
+  & .input:focus {
     outline-color: cyan;
   }
 
-  & input{
+  & input {
     border-radius: 0.5vw;
   }
 
-  & #submitBtn{
+  & #submitBtn {
     margin-bottom: 1vw;
-    & input{
+    & input {
       background-color: #ff8789;
       border-radius: 1vw;
       border-color: darkGray;
     }
   }
 
-  & #pic{
+  & #pic {
     width: 12vw;
     height: 12vw;
     border-radius: 1vw;
     border: solid 0.2vw black;
-    
-    & img{
+
+    & img {
       border-radius: 1vw;
       object-fit: cover;
       width: 12.1vw;
@@ -86,21 +86,21 @@ export const CreateDiv = styled.div`
     }
   }
 
-  & #temperaments{
+  & #temperaments {
     margin: 0;
     padding: 0;
     margin-top: -1.3vw;
     margin-bottom: 0;
   }
 
-  & #inputs{
+  & #inputs {
     width: 12vw;
     margin-top: -1.3vw;
   }
 
-  & .error{
+  & .error {
     height: 0.8vw;
     font-size: 0.7vw;
     color: red;
   }
-`
+`;
